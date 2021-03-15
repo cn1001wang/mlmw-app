@@ -4,7 +4,7 @@ Flutter空壳模板工程，已搭建基础框架，实现国际化、主题换�
 
 ## 关于我
 
-[![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)   [![简书](https://img.shields.io/badge/简书-xuexiangjys-red.svg)](https://www.jianshu.com/u/6bf605575337)   [![掘金](https://img.shields.io/badge/掘金-xuexiangjys-brightgreen.svg)](https://juejin.im/user/598feef55188257d592e56ed)   [![知乎](https://img.shields.io/badge/知乎-xuexiangjys-violet.svg)](https://www.zhihu.com/people/xuexiangjys) 
+[![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)   [![简书](https://img.shields.io/badge/简书-xuexiangjys-red.svg)](https://www.jianshu.com/u/6bf605575337)   [![掘金](https://img.shields.io/badge/掘金-xuexiangjys-brightgreen.svg)](https://juejin.im/user/598feef55188257d592e56ed)   [![知乎](https://img.shields.io/badge/知乎-xuexiangjys-violet.svg)](https://www.zhihu.com/people/xuexiangjys)
 
 ## 效果
 
@@ -27,11 +27,13 @@ flutter --version
 ```
 
 * 运行以下命令查看是否需要安装其它依赖项来完成安装
+
 ```
 flutter doctor
 ```
 
 * 运行启动您的应用
+
 ```
 flutter packages get 
 flutter run
@@ -93,7 +95,6 @@ git clone https://github.com/xuexiangjys/mlmw_app.git
 
 * 修改`lib/core/utils/xupdate.dart`中版本更新检查的地址
 
-
 ### Android目录修改
 
 * 修改android目录下的包名。
@@ -121,14 +122,19 @@ ios修改相对简单，直接使用XCode打开ios目录进行修改即可。如
 > 注意,本项目进行自动路由注册的文件是在`lib/router/route_map.dart`进行注册的,自动生成的路由表文件是`lib/router/route_map.gr.dart`.
 
 * 使用[watch]实时动态刷新路由表
+
 ```
-flutter packages pub run build_runner watch
+flutter packages pub run build_runner watch --delete-conflicting-outputs
 ```
+
 * 生成一次路由表
+
 ```
 flutter packages pub run build_runner build
 ```
+
 * 清除路由表
+
 ```
 flutter packages pub run build_runner clean
 ```
@@ -154,4 +160,3 @@ flutter pub upgrade --major-versions
 > 更多资讯内容，欢迎扫描关注我的个人微信公众号:【我的Android开源之旅】
 
 ![gzh_weixin.jpg](https://img.rruu.net/image/5f871cfff3194)
-

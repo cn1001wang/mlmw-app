@@ -7,6 +7,8 @@ import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:mlmw_app/core/utils/toast.dart';
 import 'package:mlmw_app/core/widget/grid/grid_item.dart';
 import 'package:mlmw_app/core/widget/list/article_item.dart';
+import 'package:mlmw_app/router/route_map.gr.dart';
+import 'package:mlmw_app/router/router.dart';
 
 class TabHomePage extends StatefulWidget {
   @override
@@ -56,7 +58,10 @@ class _TabHomePageState extends State<TabHomePage> {
                       title: action.title,
                       color: action.color,
                       onTap: () {
-                        ToastUtils.toast('点击-->${action.title}');
+                        // ToastUtils.toast('点击-->${action.title}');
+
+                        XRouter.push(
+                            "${Routes.tabDetailPage}?title=${action.title}");
                       });
                 },
                 childCount: actions.length,
