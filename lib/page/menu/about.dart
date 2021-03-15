@@ -53,44 +53,44 @@ class _AboutPageState extends State<AboutPage> {
                       padding: EdgeInsets.all(10.0),
                       child: Column(
                         children: <Widget>[
-                          ListItem(
-                            icon: Icon(
-                              Icons.assignment_ind,
-                              color: Colors.white,
-                            ),
-                            title: I18n.of(context).author,
-                            titleColor: Colors.white,
-                            describe: 'xuexiangjys',
-                            describeColor: Colors.white,
-                            onPressed: () {
-                              launch('https://github.com/xuexiangjys');
-                            },
-                          ),
-                          ListItem(
-                            icon: Icon(
-                              Icons.supervised_user_circle,
-                              color: Colors.white,
-                            ),
-                            title: I18n.of(context).qqgroup,
-                            titleColor: Colors.white,
-                            describe: '602082750',
-                            describeColor: Colors.white,
-                            onPressed: () {
-                              launch(
-                                  'http://qm.qq.com/cgi-bin/qm/qr?k=tiP-E6rDf0y77PRNfp2lNVcc9RsglPCM');
-                            },
-                          ),
+                          // ListItem(
+                          //   icon: Icon(
+                          //     Icons.assignment_ind,
+                          //     color: Colors.white,
+                          //   ),
+                          //   title: I18n.of(context).author,
+                          //   titleColor: Colors.white,
+                          //   describe: 'xuexiangjys',
+                          //   describeColor: Colors.white,
+                          //   onPressed: () {
+                          //     launch('https://github.com/xuexiangjys');
+                          //   },
+                          // ),
+                          // ListItem(
+                          //   icon: Icon(
+                          //     Icons.supervised_user_circle,
+                          //     color: Colors.white,
+                          //   ),
+                          //   title: I18n.of(context).qqgroup,
+                          //   titleColor: Colors.white,
+                          //   describe: '602082750',
+                          //   describeColor: Colors.white,
+                          //   onPressed: () {
+                          //     launch(
+                          //         'http://qm.qq.com/cgi-bin/qm/qr?k=tiP-E6rDf0y77PRNfp2lNVcc9RsglPCM');
+                          //   },
+                          // ),
                           ListItem(
                             icon: Icon(
                               Icons.http,
                               color: Colors.white,
                             ),
-                            title: "Github",
+                            title: I18n.of(context).website,
                             titleColor: Colors.white,
-                            describe: 'https://github.com/xuexiangjys/mlmw_app',
+                            describe: 'https://www.imouldyun.com',
                             describeColor: Colors.white,
                             onPressed: () {
-                              launch('https://github.com/xuexiangjys/mlmw_app');
+                              launch('https://www.imouldyun.com');
                             },
                           ),
                           ListItem(

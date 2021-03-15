@@ -33,39 +33,40 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Consumer2<AppTheme, LocaleModel>(
-        builder: (context, appTheme, localeModel, _) {
-      return MaterialApp(
-        title: '模来模往',
-        theme: ThemeData(
-          primarySwatch: appTheme.themeColor,
-          buttonColor: appTheme.themeColor,
-        ),
-        builder: ExtendedNavigator<RouterMap>(
-          router: RouterMap(),
-          guards: [AuthGuard()],
-        ),
-        locale: localeModel.getLocale(),
-        supportedLocales: I18n.delegate.supportedLocales,
-        localizationsDelegates: [
-          I18n.delegate,
-          GlobalMaterialLocalizations.delegate,
-          GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate,
-        ],
-        localeResolutionCallback:
-            (Locale _locale, Iterable<Locale> supportedLocales) {
-          if (localeModel.getLocale() != null) {
-            //如果已经选定语言，则不跟随系统
-            return localeModel.getLocale();
-          } else {
-            //跟随系统
-            if (I18n.delegate.isSupported(_locale)) {
-              return _locale;
+      builder: (context, appTheme, localeModel, _) {
+        return MaterialApp(
+          title: '模来模往',
+          theme: ThemeData(
+            primarySwatch: appTheme.themeColor,
+            buttonColor: appTheme.themeColor,
+          ),
+          builder: ExtendedNavigator<RouterMap>(
+            router: RouterMap(),
+            guards: [AuthGuard()],
+          ),
+          locale: localeModel.getLocale(),
+          supportedLocales: I18n.delegate.supportedLocales,
+          localizationsDelegates: [
+            I18n.delegate,
+            GlobalMaterialLocalizations.delegate,
+            GlobalWidgetsLocalizations.delegate,
+            GlobalCupertinoLocalizations.delegate,
+          ],
+          localeResolutionCallback:
+              (Locale _locale, Iterable<Locale> supportedLocales) {
+            if (localeModel.getLocale() != null) {
+              //如果已经选定语言，则不跟随系统
+              return localeModel.getLocale();
+            } else {
+              //跟随系统
+              if (I18n.delegate.isSupported(_locale)) {
+                return _locale;
+              }
+              return supportedLocales.first;
             }
-            return supportedLocales.first;
-          }
-        },
-      );
-    });
+          },
+        );
+      },
+    );
   }
 }
