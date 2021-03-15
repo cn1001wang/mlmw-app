@@ -2,6 +2,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
 import 'package:mlmw_app/init/splash.dart';
+import 'package:mlmw_app/page/home/tab_detail.dart';
 import 'package:mlmw_app/page/index.dart';
 import 'package:mlmw_app/page/menu/about.dart';
 import 'package:mlmw_app/page/menu/language.dart';
@@ -24,10 +25,11 @@ import 'package:mlmw_app/utils/sputils.dart';
       AutoRoute(page: LoginPage),
       AutoRoute(page: RegisterPage),
       AutoRoute(page: ThemeColorPage),
-      AutoRoute(page: LanguagePage)
+      AutoRoute(page: LanguagePage),
+      AutoRoute(page: TabDetailPage),
     ],
     routesClassName: 'Routes',
-    transitionsBuilder: getTransitions,
+    transitionsBuilder: Transitions.getTransitions,
     durationInMilliseconds: 800)
 class $RouterMap {}
 
@@ -43,16 +45,21 @@ class AuthGuard extends RouteGuard {
   }
 }
 
-/// 页面切换动画
-Widget getTransitions(BuildContext context, Animation<double> animation1,
-    Animation<double> animation2, Widget child) {
-  return SlideTransition(
-    position: Tween<Offset>(
-            //1.0为右进右出，-1.0为左进左出
-            begin: Offset(1.0, 0.0),
-            end: Offset(0.0, 0.0))
-        .animate(
-            CurvedAnimation(parent: animation1, curve: Curves.fastOutSlowIn)),
-    child: child,
-  );
+class Transitions {
+  /// 页面切换动画
+  static Widget getTransitions(
+      BuildContext context,
+      Animation<double> animation1,
+      Animation<double> animation2,
+      Widget child) {
+    return SlideTransition(
+      position: Tween<Offset>(
+              //1.0为右进右出，-1.0为左进左出
+              begin: Offset(1.0, 0.0),
+              end: Offset(0.0, 0.0))
+          .animate(
+              CurvedAnimation(parent: animation1, curve: Curves.fastOutSlowIn)),
+      child: child,
+    );
+  }
 }

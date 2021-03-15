@@ -10,6 +10,7 @@ import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
 import '../init/splash.dart';
+import '../page/home/tab_detail.dart';
 import '../page/index.dart';
 import '../page/menu/about.dart';
 import '../page/menu/language.dart';
@@ -30,6 +31,7 @@ class Routes {
   static const String registerPage = '/register-page';
   static const String themeColorPage = '/theme-color-page';
   static const String languagePage = '/language-page';
+  static const String tabDetailPage = '/tab-detail-page';
   static const all = <String>{
     splashPage,
     mainHomePage,
@@ -40,6 +42,7 @@ class Routes {
     registerPage,
     themeColorPage,
     languagePage,
+    tabDetailPage,
   };
 }
 
@@ -56,6 +59,7 @@ class RouterMap extends RouterBase {
     RouteDef(Routes.registerPage, page: RegisterPage),
     RouteDef(Routes.themeColorPage, page: ThemeColorPage),
     RouteDef(Routes.languagePage, page: LanguagePage),
+    RouteDef(Routes.tabDetailPage, page: TabDetailPage),
   ];
   @override
   Map<Type, AutoRouteFactory> get pagesMap => _pagesMap;
@@ -66,7 +70,7 @@ class RouterMap extends RouterBase {
         settings: data,
         opaque: false,
         barrierDismissible: false,
-        transitionsBuilder: getTransitions,
+        transitionsBuilder: Transitions.getTransitions,
         transitionDuration: const Duration(milliseconds: 800),
       );
     },
@@ -80,7 +84,7 @@ class RouterMap extends RouterBase {
         settings: data,
         opaque: false,
         barrierDismissible: false,
-        transitionsBuilder: getTransitions,
+        transitionsBuilder: Transitions.getTransitions,
         transitionDuration: const Duration(milliseconds: 800),
       );
     },
@@ -108,7 +112,7 @@ class RouterMap extends RouterBase {
         settings: data,
         opaque: false,
         barrierDismissible: false,
-        transitionsBuilder: getTransitions,
+        transitionsBuilder: Transitions.getTransitions,
         transitionDuration: const Duration(milliseconds: 800),
       );
     },
@@ -118,7 +122,7 @@ class RouterMap extends RouterBase {
         settings: data,
         opaque: false,
         barrierDismissible: false,
-        transitionsBuilder: getTransitions,
+        transitionsBuilder: Transitions.getTransitions,
         transitionDuration: const Duration(milliseconds: 800),
       );
     },
@@ -129,7 +133,7 @@ class RouterMap extends RouterBase {
         settings: data,
         opaque: false,
         barrierDismissible: false,
-        transitionsBuilder: getTransitions,
+        transitionsBuilder: Transitions.getTransitions,
         transitionDuration: const Duration(milliseconds: 800),
       );
     },
@@ -139,7 +143,23 @@ class RouterMap extends RouterBase {
         settings: data,
         opaque: false,
         barrierDismissible: false,
-        transitionsBuilder: getTransitions,
+        transitionsBuilder: Transitions.getTransitions,
+        transitionDuration: const Duration(milliseconds: 800),
+      );
+    },
+    TabDetailPage: (data) {
+      final args = data.getArgs<TabDetailPageArguments>(
+        orElse: () => TabDetailPageArguments(),
+      );
+      return PageRouteBuilder<dynamic>(
+        pageBuilder: (context, animation, secondaryAnimation) => TabDetailPage(
+          data.queryParams['title'].stringValue,
+          key: args.key,
+        ),
+        settings: data,
+        opaque: false,
+        barrierDismissible: false,
+        transitionsBuilder: Transitions.getTransitions,
         transitionDuration: const Duration(milliseconds: 800),
       );
     },
@@ -154,4 +174,10 @@ class RouterMap extends RouterBase {
 class MainHomePageArguments {
   final Key key;
   MainHomePageArguments({this.key});
+}
+
+/// TabDetailPage arguments holder class
+class TabDetailPageArguments {
+  final Key key;
+  TabDetailPageArguments({this.key});
 }
