@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:fluro/fluro.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/widget/web_view_page.dart';
+import 'package:mlmw_app/core/widget/web_view_page.dart';
 
 ///使用fluro进行路由管理
 class XRouter {

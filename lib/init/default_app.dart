@@ -1,14 +1,14 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
-import 'package:flutter_template/core/http/http.dart';
-import 'package:flutter_template/core/utils/toast.dart';
-import 'package:flutter_template/generated/i18n.dart';
-import 'package:flutter_template/router/route_map.dart';
-import 'package:flutter_template/router/route_map.gr.dart';
-import 'package:flutter_template/router/router.dart';
-import 'package:flutter_template/utils/provider.dart';
-import 'package:flutter_template/utils/sputils.dart';
+import 'package:mlmw_app/core/http/http.dart';
+import 'package:mlmw_app/core/utils/toast.dart';
+import 'package:mlmw_app/generated/i18n.dart';
+import 'package:mlmw_app/router/route_map.dart';
+import 'package:mlmw_app/router/route_map.gr.dart';
+import 'package:mlmw_app/router/router.dart';
+import 'package:mlmw_app/utils/provider.dart';
+import 'package:mlmw_app/utils/sputils.dart';
 import 'package:provider/provider.dart';
 
 //默认App的启动
@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
     return Consumer2<AppTheme, LocaleModel>(
         builder: (context, appTheme, localeModel, _) {
       return MaterialApp(
-        title: 'Flutter Project',
+        title: '模来模往',
         theme: ThemeData(
           primarySwatch: appTheme.themeColor,
           buttonColor: appTheme.themeColor,

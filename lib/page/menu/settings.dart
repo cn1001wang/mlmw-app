@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/generated/i18n.dart';
-import 'package:flutter_template/router/route_map.gr.dart';
-import 'package:flutter_template/router/router.dart';
+import 'package:mlmw_app/generated/i18n.dart';
+import 'package:mlmw_app/router/route_map.gr.dart';
+import 'package:mlmw_app/router/router.dart';
 
 class SettingsPage extends StatefulWidget {
   @override

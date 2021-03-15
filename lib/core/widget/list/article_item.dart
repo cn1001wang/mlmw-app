@@ -1,6 +1,6 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/router/router.dart';
+import 'package:mlmw_app/router/router.dart';
 
 /// 资讯列表详情
 class ArticleListItem extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/generated/i18n.dart';
+import 'package:mlmw_app/generated/i18n.dart';
 import 'package:provider/provider.dart';
 
 import 'sputils.dart';
@@ -121,18 +121,21 @@ class UserProfile with ChangeNotifier {
 
 ///主页
 const int TAB_HOME_INDEX = 0;
+
 ///分类
 const int TAB_CATEGORY_INDEX = 1;
+
 ///活动
 const int TAB_ACTIVITY_INDEX = 2;
+
 ///消息
 const int TAB_MESSAGE_INDEX = 3;
+
 ///我的
 const int TAB_PROFILE_INDEX = 4;
 
 ///应用状态
 class AppStatus with ChangeNotifier {
-  
   //主页tab的索引
   int _tabIndex;
 
@@ -145,4 +148,3 @@ class AppStatus with ChangeNotifier {
     notifyListeners();
   }
 }
-

@@ -1,17 +1,17 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_template/init/splash.dart';
-import 'package:flutter_template/page/index.dart';
-import 'package:flutter_template/page/menu/about.dart';
-import 'package:flutter_template/page/menu/language.dart';
-import 'package:flutter_template/page/menu/login.dart';
-import 'package:flutter_template/page/menu/register.dart';
-import 'package:flutter_template/page/menu/settings.dart';
-import 'package:flutter_template/page/menu/sponsor.dart';
-import 'package:flutter_template/page/menu/theme_color.dart';
-import 'package:flutter_template/router/route_map.gr.dart';
-import 'package:flutter_template/utils/sputils.dart';
+import 'package:mlmw_app/init/splash.dart';
+import 'package:mlmw_app/page/index.dart';
+import 'package:mlmw_app/page/menu/about.dart';
+import 'package:mlmw_app/page/menu/language.dart';
+import 'package:mlmw_app/page/menu/login.dart';
+import 'package:mlmw_app/page/menu/register.dart';
+import 'package:mlmw_app/page/menu/settings.dart';
+import 'package:mlmw_app/page/menu/sponsor.dart';
+import 'package:mlmw_app/page/menu/theme_color.dart';
+import 'package:mlmw_app/router/route_map.gr.dart';
+import 'package:mlmw_app/utils/sputils.dart';
 
 ///页面路由映射表
 @CustomAutoRouter(

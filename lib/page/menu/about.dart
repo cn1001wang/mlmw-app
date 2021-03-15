@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/utils/utils.dart';
-import 'package:flutter_template/core/utils/xupdate.dart';
-import 'package:flutter_template/core/widget/list/list_item.dart';
-import 'package:flutter_template/generated/i18n.dart';
+import 'package:mlmw_app/core/utils/utils.dart';
+import 'package:mlmw_app/core/utils/xupdate.dart';
+import 'package:mlmw_app/core/widget/list/list_item.dart';
+import 'package:mlmw_app/generated/i18n.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class AboutPage extends StatefulWidget {
@@ -87,12 +87,10 @@ class _AboutPageState extends State<AboutPage> {
                             ),
                             title: "Github",
                             titleColor: Colors.white,
-                            describe:
-                                'https://github.com/xuexiangjys/flutter_template',
+                            describe: 'https://github.com/xuexiangjys/mlmw_app',
                             describeColor: Colors.white,
                             onPressed: () {
-                              launch(
-                                  'https://github.com/xuexiangjys/flutter_template');
+                              launch('https://github.com/xuexiangjys/mlmw_app');
                             },
                           ),
                           ListItem(

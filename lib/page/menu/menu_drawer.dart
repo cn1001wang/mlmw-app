@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/core/utils/toast.dart';
-import 'package:flutter_template/core/utils/xuifont.dart';
-import 'package:flutter_template/generated/i18n.dart';
-import 'package:flutter_template/router/route_map.gr.dart';
-import 'package:flutter_template/router/router.dart';
-import 'package:flutter_template/utils/provider.dart';
+import 'package:mlmw_app/core/utils/toast.dart';
+import 'package:mlmw_app/core/utils/xuifont.dart';
+import 'package:mlmw_app/generated/i18n.dart';
+import 'package:mlmw_app/router/route_map.gr.dart';
+import 'package:mlmw_app/router/router.dart';
+import 'package:mlmw_app/utils/provider.dart';
 import 'package:provider/provider.dart';
 
 class MenuDrawer extends StatelessWidget {

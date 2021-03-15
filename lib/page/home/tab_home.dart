@@ -4,9 +4,9 @@ import 'package:flutter_easyrefresh/easy_refresh.dart';
 import 'package:flutter_easyrefresh/material_footer.dart';
 import 'package:flutter_easyrefresh/material_header.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
-import 'package:flutter_template/core/utils/toast.dart';
-import 'package:flutter_template/core/widget/grid/grid_item.dart';
-import 'package:flutter_template/core/widget/list/article_item.dart';
+import 'package:mlmw_app/core/utils/toast.dart';
+import 'package:mlmw_app/core/widget/grid/grid_item.dart';
+import 'package:mlmw_app/core/widget/list/article_item.dart';
 
 class TabHomePage extends StatefulWidget {
   @override

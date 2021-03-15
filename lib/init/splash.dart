@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_template/router/route_map.gr.dart';
-import 'package:flutter_template/router/router.dart';
+import 'package:mlmw_app/router/route_map.gr.dart';
+import 'package:mlmw_app/router/router.dart';
 
 //类似广告启动页
 class SplashPage extends StatefulWidget {
