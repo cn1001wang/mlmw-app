@@ -1,44 +1,5 @@
 # mlmw_app
 
-Flutter空壳模板工程，已搭建基础框架，实现国际化、主题换肤、登录注册等功能，可在此基础上简单修改实现自己的应用功能。
-
-## 关于我
-
-[![github](https://img.shields.io/badge/GitHub-xuexiangjys-blue.svg)](https://github.com/xuexiangjys)   [![csdn](https://img.shields.io/badge/CSDN-xuexiangjys-green.svg)](http://blog.csdn.net/xuexiangjys)   [![简书](https://img.shields.io/badge/简书-xuexiangjys-red.svg)](https://www.jianshu.com/u/6bf605575337)   [![掘金](https://img.shields.io/badge/掘金-xuexiangjys-brightgreen.svg)](https://juejin.im/user/598feef55188257d592e56ed)   [![知乎](https://img.shields.io/badge/知乎-xuexiangjys-violet.svg)](https://www.zhihu.com/people/xuexiangjys)
-
-## 效果
-
-![mlmw_app.gif](https://img.rruu.net/image/5f7dc4e09424b)
-
-## 视频教程
-
-* [Flutter模板工程入门介绍](https://www.bilibili.com/video/BV1854y1W7hB)
-
-* [Flutter模板工程使用详解](https://www.bilibili.com/video/BV13N411d73X)
-
-* [Flutter系列视频教程](https://space.bilibili.com/483850585/channel/detail?cid=168279)
-
-## 运行
-
-* 查看一下版本号是否正确, 目前支持的flutter运行环境是`2.0.1`！
-
-```
-flutter --version
-```
-
-* 运行以下命令查看是否需要安装其它依赖项来完成安装
-
-```
-flutter doctor
-```
-
-* 运行启动您的应用
-
-```
-flutter packages get 
-flutter run
-```
-
 ## 项目集成介绍
 
 > 本项目精选了目前Flutter最实用的几个库，可大大提高开发的效率。
@@ -67,7 +28,7 @@ flutter run
 
 1.克隆项目
 
-```
+```bash
 git clone https://github.com/xuexiangjys/mlmw_app.git
 ```
 
@@ -123,25 +84,19 @@ ios修改相对简单，直接使用XCode打开ios目录进行修改即可。如
 
 * 使用[watch]实时动态刷新路由表
 
-```
+``` bash
 flutter packages pub run build_runner watch --delete-conflicting-outputs
-```
 
-* 生成一次路由表
-
-```
+ 生成一次路由表
 flutter packages pub run build_runner build
-```
 
-* 清除路由表
-
-```
+清除路由表
 flutter packages pub run build_runner clean
 ```
 
 ## 更新插件版本
 
-```
+``` bash
 flutter packages upgrade
 flutter pub outdated
 flutter pub upgrade --major-versions

@@ -8,6 +8,7 @@ import 'package:mlmw_app/router/route_map.dart';
 import 'package:mlmw_app/router/route_map.gr.dart';
 import 'package:mlmw_app/router/router.dart';
 import 'package:mlmw_app/utils/provider.dart';
+import 'package:mlmw_app/utils/size_config.dart';
 import 'package:mlmw_app/utils/sputils.dart';
 import 'package:provider/provider.dart';
 

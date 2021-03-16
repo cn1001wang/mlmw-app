@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mlmw_app/core/utils/toast.dart';
-import 'package:mlmw_app/core/utils/xuifont.dart';
 import 'package:mlmw_app/generated/i18n.dart';
 import 'package:mlmw_app/router/route_map.gr.dart';
 import 'package:mlmw_app/router/router.dart';
@@ -135,7 +134,7 @@ class MenuDrawer extends StatelessWidget {
                   //退出
                   Divider(height: 1.0, color: Colors.grey),
                   ListTile(
-                    leading: Icon(XUIIcons.logout),
+                    leading: Icon(Icons.logout),
                     title: Text(I18n.of(context).logout),
                     onTap: () {
                       value.nickName = "";

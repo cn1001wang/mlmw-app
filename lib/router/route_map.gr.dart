@@ -9,7 +9,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:flutter/material.dart';
 
-import '../init/splash.dart';
+import '../init/splash/splash.dart';
 import '../page/home/tab_detail.dart';
 import '../page/index.dart';
 import '../page/menu/about.dart';

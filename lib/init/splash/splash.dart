@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:mlmw_app/init/splash/components/body.dart';
 import 'package:mlmw_app/router/route_map.gr.dart';
 import 'package:mlmw_app/router/router.dart';
+import 'package:mlmw_app/utils/size_config.dart';
 
 //类似广告启动页
 class SplashPage extends StatefulWidget {
@@ -12,16 +14,21 @@ class _SplashPageState extends State<SplashPage> {
   @override
   void initState() {
     super.initState();
-    countDown();
+    // countDown();
   }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-        ),
-        child: Center(child: FlutterLogo(size: 96)));
+    SizeConfig().init(context);
+    return Body();
+    // return Container(
+    //   decoration: BoxDecoration(
+    //     color: Colors.white,
+    //   ),
+    //   child: Center(
+    //     child: FlutterLogo(size: 96),
+    //   ),
+    // );
   }
 
   //倒计时

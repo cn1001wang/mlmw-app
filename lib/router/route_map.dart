@@ -1,7 +1,7 @@
 import 'package:auto_route/auto_route.dart';
 import 'package:auto_route/auto_route_annotations.dart';
 import 'package:flutter/material.dart';
-import 'package:mlmw_app/init/splash.dart';
+import 'package:mlmw_app/init/splash/splash.dart';
 import 'package:mlmw_app/page/home/tab_detail.dart';
 import 'package:mlmw_app/page/index.dart';
 import 'package:mlmw_app/page/menu/about.dart';
