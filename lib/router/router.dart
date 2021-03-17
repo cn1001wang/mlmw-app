@@ -15,18 +15,23 @@ class XRouter {
   ///路由配置
   static void configureRoutes(FluroRouter router) {
     router.notFoundHandler = Handler(
-        handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-      print("route is not find !");
-      return null;
-    });
+      handlerFunc: (BuildContext context, Map<String, List<String>> params) {
+        print("route is not find !");
+        return null;
+      },
+    );
 
     //网页加载
-    router.define('/web', handler: Handler(
+    router.define(
+      '/web',
+      handler: Handler(
         handlerFunc: (BuildContext context, Map<String, List<String>> params) {
-      String title = params['title']?.first;
-      String url = params['url']?.first;
-      return WebViewPage(url, title);
-    }));
+          String title = params['title']?.first;
+          String url = params['url']?.first;
+          return WebViewPage(url, title);
+        },
+      ),
+    );
   }
 
   static void navigateTo(BuildContext context, String path) {

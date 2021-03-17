@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:mlmw_app/core/http/http.dart';
 import 'package:mlmw_app/generated/i18n.dart';
+import 'package:mlmw_app/plugins/abp/abp_user_configuration.dart';
 import 'package:provider/provider.dart';
 
 import 'sputils.dart';
@@ -15,7 +17,7 @@ class Store {
       providers: [
         ChangeNotifierProvider(create: (_) => AppTheme(getDefaultTheme())),
         ChangeNotifierProvider.value(value: LocaleModel(SPUtils.getLocale())),
-        ChangeNotifierProvider.value(value: UserProfile(SPUtils.getNickName())),
+        ChangeNotifierProvider.value(value: UserProfile()),
         ChangeNotifierProvider.value(value: AppStatus(TAB_HOME_INDEX)),
       ],
       child: child,
@@ -105,16 +107,39 @@ class LocaleModel with ChangeNotifier {
 }
 
 ///用户账户信息
+// class UserProfile with ChangeNotifier {
+//   String _nickName;
+
+//   UserProfile(this._nickName);
+
+//   String get nickName => _nickName;
+
+//   set nickName(String nickName) {
+//     _nickName = nickName;
+//     SPUtils.saveNickName(nickName);
+//     notifyListeners();
+//   }
+// }
+///用户账户信息
 class UserProfile with ChangeNotifier {
-  String _nickName;
+  AbpUserConfiguration _abp;
 
-  UserProfile(this._nickName);
+  UserProfile() {
+    _abp = null;
+  }
+  static Future<AbpUserConfiguration> _getAbpConfig() async {
+    return await XHttp.get("/UserConfiguration/GetAll").then((value) {
+      return AbpUserConfiguration.fromJson(value.getResult());
+    }).catchError((error) {
+      print("ERROR: $error");
+    });
+  }
 
-  String get nickName => _nickName;
+  AbpUserConfiguration get abp => _abp;
 
-  set nickName(String nickName) {
-    _nickName = nickName;
-    SPUtils.saveNickName(nickName);
+  set nickName(AbpUserConfiguration abp) {
+    _abp = abp;
+    SPUtils.saveUserId(abp.session.userId);
     notifyListeners();
   }
 }

@@ -39,35 +39,36 @@ class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
     return WillPopScope(
-        child: Scaffold(
-          appBar: AppBar(
-            // leading: _leading(context),
-            title: Text(I18n.of(context).login),
-            actions: <Widget>[
-              TextButton(
-                child: Text(I18n.of(context).register,
-                    style: TextStyle(color: Colors.white)),
-                onPressed: () {
-                  XRouter.push(Routes.registerPage);
-                },
-              )
-            ],
-          ),
-          body: GestureDetector(
-            onTap: () {
-              // 点击空白页面关闭键盘
-              closeKeyboard(context);
-            },
-            child: SingleChildScrollView(
-              padding:
-                  const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
-              child: buildForm(context),
-            ),
+      child: Scaffold(
+        appBar: AppBar(
+          // leading: _leading(context),
+          title: Text(I18n.of(context).login),
+          actions: <Widget>[
+            TextButton(
+              child: Text(I18n.of(context).register,
+                  style: TextStyle(color: Colors.white)),
+              onPressed: () {
+                XRouter.push(Routes.registerPage);
+              },
+            )
+          ],
+        ),
+        body: GestureDetector(
+          onTap: () {
+            // 点击空白页面关闭键盘
+            closeKeyboard(context);
+          },
+          child: SingleChildScrollView(
+            padding:
+                const EdgeInsets.symmetric(vertical: 16.0, horizontal: 24.0),
+            child: buildForm(context),
           ),
         ),
-        onWillPop: () async {
-          return Future.value(false);
-        });
+      ),
+      onWillPop: () async {
+        return Future.value(false);
+      },
+    );
   }
 
   //构建表单
@@ -78,46 +79,48 @@ class _LoginPageState extends State<LoginPage> {
       child: Column(
         children: <Widget>[
           Center(
-              heightFactor: 1.5,
-              child: FlutterLogo(
-                size: 64,
-              )),
+            heightFactor: 1.5,
+            child: FlutterLogo(
+              size: 64,
+            ),
+          ),
           TextFormField(
-              autofocus: false,
-              controller: _unameController,
-              decoration: InputDecoration(
-                  labelText: I18n.of(context).loginName,
-                  hintText: I18n.of(context).loginNameHint,
-                  hintStyle: TextStyle(fontSize: 12),
-                  icon: Icon(Icons.person)),
-              //校验用户名
-              validator: (v) {
-                return v.trim().length > 0
-                    ? null
-                    : I18n.of(context).loginNameError;
-              }),
+            autofocus: false,
+            controller: _unameController,
+            decoration: InputDecoration(
+                labelText: I18n.of(context).loginName,
+                hintText: I18n.of(context).loginNameHint,
+                hintStyle: TextStyle(fontSize: 12),
+                icon: Icon(Icons.person)),
+            //校验用户名
+            validator: (v) {
+              return v.trim().length > 0
+                  ? null
+                  : I18n.of(context).loginNameError;
+            },
+          ),
           TextFormField(
-              controller: _pwdController,
-              decoration: InputDecoration(
-                  labelText: I18n.of(context).password,
-                  hintText: I18n.of(context).passwordHint,
-                  hintStyle: TextStyle(fontSize: 12),
-                  icon: Icon(Icons.lock),
-                  suffixIcon: IconButton(
-                      icon: Icon(
-                        _isShowPassWord
-                            ? Icons.visibility
-                            : Icons.visibility_off,
-                        color: Colors.black,
-                      ),
-                      onPressed: showPassWord)),
-              obscureText: !_isShowPassWord,
-              //校验密码
-              validator: (v) {
-                return v.trim().length >= 6
-                    ? null
-                    : I18n.of(context).passwordError;
-              }),
+            controller: _pwdController,
+            decoration: InputDecoration(
+              labelText: I18n.of(context).password,
+              hintText: I18n.of(context).passwordHint,
+              hintStyle: TextStyle(fontSize: 12),
+              icon: Icon(Icons.lock),
+              suffixIcon: IconButton(
+                  icon: Icon(
+                    _isShowPassWord ? Icons.visibility : Icons.visibility_off,
+                    color: Colors.black,
+                  ),
+                  onPressed: showPassWord),
+            ),
+            obscureText: !_isShowPassWord,
+            //校验密码
+            validator: (v) {
+              return v.trim().length >= 6
+                  ? null
+                  : I18n.of(context).passwordError;
+            },
+          ),
           // 登录按钮
           Padding(
             padding: const EdgeInsets.only(top: 28.0),
@@ -174,13 +177,13 @@ class _LoginPageState extends State<LoginPage> {
 
     UserProfile userProfile = Provider.of<UserProfile>(context, listen: false);
 
-    XHttp.post("/user/login", {
+    XHttp.tempPost("/user/login", {
       "username": _unameController.text,
       "password": _pwdController.text
     }).then((response) {
       Navigator.pop(context);
       if (response['errorCode'] == 0) {
-        userProfile.nickName = response['data']['nickname'];
+        // userProfile.nickName = response['data']['nickname'];
         ToastUtils.toast(I18n.of(context).loginSuccess);
         XRouter.replace(Routes.mainHomePage);
       } else {

@@ -165,7 +165,7 @@ class _RegisterPageState extends State<RegisterPage> {
           );
         });
 
-    XHttp.post("/user/register", {
+    XHttp.tempPost("/user/register", {
       "username": _unameController.text,
       "password": _pwdController.text,
       "repassword": _pwdRepeatController.text

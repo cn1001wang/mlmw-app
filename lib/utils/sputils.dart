@@ -43,6 +43,16 @@ class SPUtils {
     return _spf.getString('key_nickname');
   }
 
+  /// 
+  static String keyUserId = "key_user_id";
+  static Future<bool> saveUserId(int userId) {
+    return _spf.setInt(keyUserId, userId);
+  }
+
+  static int getUserId() {
+    return _spf.getInt(keyUserId);
+  }
+
   ///是否同意隐私协议
   static Future<bool> saveIsAgreePrivacy(bool isAgree) {
     return _spf.setBool('key_agree_privacy', isAgree);

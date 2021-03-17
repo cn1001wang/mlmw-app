@@ -62,18 +62,33 @@ class XHttp {
   }
 
   ///get请求
-  static Future get(String url, [Map<String, dynamic> params]) async {
-    Response response;
-    if (params != null) {
-      response = await dio.get(url, queryParameters: params);
-    } else {
-      response = await dio.get(url);
-    }
-    return response.data;
+  // static Future get(String url, [Map<String, dynamic> params]) async {
+  //   Response response;
+  //   if (params != null) {
+  //     response = await dio.get(url, queryParameters: params);
+  //   } else {
+  //     response = await dio.get(url);
+  //   }
+  //   return response.data;
+  // }
+  static Future get(
+    String path, {
+    Map<String, dynamic> queryParameters,
+    Options options,
+    CancelToken cancelToken,
+    ProgressCallback onReceiveProgress,
+  }) async {
+    final Response<String> response = await dio.get<String>(
+      path,
+      queryParameters: queryParameters,
+      options: options,
+      cancelToken: cancelToken,
+    );
+    return response.getResult();
   }
 
   ///post 表单请求
-  static Future post(String url, [Map<String, dynamic> params]) async {
+  static Future tempPost(String url, [Map<String, dynamic> params]) async {
     Response response = await dio.post(url, queryParameters: params);
     return response.data;
   }
@@ -97,5 +112,15 @@ class XHttp {
       handleError(e);
     }
     return response.data;
+  }
+}
+
+extension ResponseExtension on Response {
+  dynamic getResult() {
+    if (this.data["success"]) {
+      return this.data["result"];
+    } else {
+      return this.data;
+    }
   }
 }

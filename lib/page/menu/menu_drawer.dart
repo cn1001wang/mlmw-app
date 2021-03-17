@@ -36,8 +36,8 @@ class MenuDrawer extends StatelessWidget {
                     ),
                     Expanded(
                         child: Text(
-                      value.nickName != null
-                          ? value.nickName
+                      value.abp.session.userId != null
+                          ? value.abp.session.userId
                           : I18n.of(context).title,
                       overflow: TextOverflow.ellipsis,
                       style: TextStyle(
@@ -137,7 +137,7 @@ class MenuDrawer extends StatelessWidget {
                     leading: Icon(Icons.logout),
                     title: Text(I18n.of(context).logout),
                     onTap: () {
-                      value.nickName = "";
+                      // value.nickName = "";
                       XRouter.replace(Routes.loginPage);
                     },
                   )
