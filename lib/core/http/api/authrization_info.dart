@@ -1,16 +1,13 @@
-import 'package:mlmw_test/plugins/abp/abp_user_configuration.dart';
-import 'package:mlmw_test/plugins/dio_manager.dart';
+import 'package:mlmw_app/core/http/http.dart';
+import 'package:mlmw_app/plugins/abp/abp_user_configuration.dart';
 
 class Abp {
   static AbpUserConfiguration _config;
   static Duration timeout = new Duration(seconds: 1);
   static DateTime lastConfigTime;
   static Future<AbpUserConfiguration> _getAbpConfig() async {
-    return await DioManager()
-        .dio
-        .get("/UserConfiguration/GetAll")
-        .then((value) {
-      return _config = AbpUserConfiguration.fromJson(value.getResult());
+    return await XHttp.get("/UserConfiguration/GetAll").then((value) {
+      return _config = AbpUserConfiguration.fromJson(value);
     }).catchError((error) {
       print("ERROR: $error");
     });

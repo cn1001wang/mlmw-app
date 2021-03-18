@@ -1,6 +1,7 @@
 import 'package:cookie_jar/cookie_jar.dart';
 import 'package:dio/dio.dart';
 import 'package:dio_cookie_manager/dio_cookie_manager.dart';
+import 'package:mlmw_app/constant/api_constant.dart';
 import 'package:mlmw_app/core/utils/path.dart';
 
 class XHttp {
@@ -8,9 +9,9 @@ class XHttp {
 
   ///网络请求配置
   static final Dio dio = Dio(BaseOptions(
-    baseUrl: "https://www.wanandroid.com",
-    connectTimeout: 5000,
-    receiveTimeout: 3000,
+    baseUrl: ApiConstant.API_PREFIX,
+    connectTimeout: ApiConstant.CONNECT_TIMEOUT,
+    receiveTimeout: ApiConstant.RECEIVE_TIMEOUT,
   ));
 
   ///初始化dio

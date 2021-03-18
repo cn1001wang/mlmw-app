@@ -45,8 +45,8 @@ class AuthGuard extends RouteGuard {
   }
 }
 
+/// 页面切换动画
 class Transitions {
-  /// 页面切换动画
   static Widget getTransitions(
       BuildContext context,
       Animation<double> animation1,

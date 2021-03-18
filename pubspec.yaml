@@ -46,7 +46,10 @@ dependencies:
   shared_preferences: ^2.0.3
   share: ^2.0.1
   url_launcher: ^6.0.2
-  
+  sp_util: ^2.0.3
+  common_utils: ^2.0.2
+  flustars: ^2.0.1
+  sprintf: ^5.0.0
 
 dev_dependencies:
   flutter_test:

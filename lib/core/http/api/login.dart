@@ -21,7 +21,7 @@ class Login {
     });
 
     try {
-      Response response = await XHttp.tempPost(
+      Response response = await XHttp.dio.post(
         "/api/TokenAuth/Authenticate",
         data: data,
         options: Options(contentType: Headers.formUrlEncodedContentType),
@@ -35,8 +35,8 @@ class Login {
       ];
 
       // print(cookies);`
-      (await DioManager().cookieJar)
-          .saveFromResponse(Uri.parse(NetWorkConfig.API_PREFIX), cookies);
+      // (await XHttp.cookieJar)
+      //     .saveFromResponse(Uri.parse(NetWorkConfig.API_PREFIX), cookies);
 
       // List<Cookie> cookies1 = (await DioManager().cookieJar)
       //     .loadForRequest(Uri.parse(NetWorkConfig.API_PREFIX));

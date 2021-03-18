@@ -1,4 +1,5 @@
 import 'package:auto_route/auto_route.dart';
+import 'package:flustars/flustars.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -18,8 +19,10 @@ class DefaultApp {
   //运行app
   static void run() {
     WidgetsFlutterBinding.ensureInitialized();
-    SPUtils.init()
+    SpUtil.getInstance()
         .then((value) => runApp(Store.init(ToastUtils.init(MyApp()))));
+    // SPUtils.init()
+    //     .then((value) => );
     initApp();
   }
 
