@@ -1,3 +1,4 @@
+import 'package:mlmw_app/constant/constant.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:sp_util/sp_util.dart';
 
@@ -44,16 +45,6 @@ class SPUtils {
     return SpUtil.getString('key_nickname');
   }
 
-  ///containsKey
-  static String keyUserId = "key_user_id";
-  static Future<bool> saveUserId(int userId) {
-    return SpUtil.putInt(keyUserId, userId);
-  }
-
-  static int getUserId() {
-    return SpUtil.getInt(keyUserId);
-  }
-
   ///是否同意隐私协议
   static Future<bool> saveIsAgreePrivacy(bool isAgree) {
     return SpUtil.putBool('key_agree_privacy', isAgree);
@@ -70,5 +61,23 @@ class SPUtils {
   static bool isLogined() {
     String nickName = getNickName();
     return nickName != null && nickName.isNotEmpty;
+  }
+
+  /// ---------------------------------------
+
+  /// token
+  static Future<bool> saveAccessToken(String token) {
+    return SpUtil.putString(Constant.accessToken, token);
+  }
+
+  static String getToken() {
+    return SpUtil.getString(Constant.accessToken);
+  }
+  static Future<bool> saveEncryptedAccessToken(String encryptedAccessToken) {
+    return SpUtil.putString(Constant.encryptedAccessToken, encryptedAccessToken)
+  }
+
+  static String getEncryptedAccessToken() {
+    return SpUtil.getString(Constant.encryptedAccessToken);
   }
 }

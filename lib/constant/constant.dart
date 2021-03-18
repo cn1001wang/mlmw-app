@@ -8,8 +8,10 @@ class Constant {
   static bool isDriverTest = false;
   static bool isUnitTest = false;
 
-  static const String accessToken = 'accessToken';
-  static const String refreshToken = 'refreshToken';
+  static const String accessToken = 'Abp.AuthToken';
+  static const String encryptedAccessToken = 'token';
+
+  // static const String refreshToken = 'refreshToken';
 
   static const String theme = 'AppTheme';
   static const String locale = 'locale';

@@ -2,14 +2,12 @@ import 'dart:io';
 
 import 'package:dio/dio.dart';
 import 'package:mlmw_app/core/http/http.dart';
+import 'package:mlmw_app/utils/sputils.dart';
 
 class Login {
   final String tenancyname;
   final String username;
   final String password;
-
-  static const String _tokenCookieName = 'Abp.AuthToken';
-  static const String _encrptedAuthTokenName = 'token';
 
   Login(this.tenancyname, this.username, this.password);
 
@@ -28,11 +26,13 @@ class Login {
       );
       var res = response.getResult();
 
+      SPUtils.saveAccessToken(res["accessToken"]);
+      SPUtils.saveEncryptedAccessToken(res["encryptedAccessToken"]);
       //Save cookies
-      List<Cookie> cookies = [
-        Cookie(_tokenCookieName, res["accessToken"]),
-        Cookie(_encrptedAuthTokenName, res["encryptedAccessToken"])
-      ];
+      // List<Cookie> cookies = [
+      //   Cookie(_tokenCookieName, res["accessToken"]),
+      //   Cookie(_encrptedAuthTokenName, res["encryptedAccessToken"])
+      // ];
 
       // print(cookies);`
       // (await XHttp.cookieJar)

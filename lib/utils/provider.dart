@@ -139,7 +139,7 @@ class UserProfile with ChangeNotifier {
 
   set nickName(AbpUserConfiguration abp) {
     _abp = abp;
-    SPUtils.saveUserId(abp.session.userId);
+    // SPUtils.saveUserId(abp.session.userId);
     notifyListeners();
   }
 }
